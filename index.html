@@ -94,12 +94,17 @@
   }
   .nav{
     display:flex;align-items:center;justify-content:space-between;
-    padding:16px 24px;max-width:1160px;margin:0 auto;
+    padding:10px 24px;max-width:1160px;margin:0 auto;
   }
   .logo{
+    display:flex;align-items:center;
     font-family:'Fraunces',serif;
     font-size:1.15rem;font-weight:700;color:#fff;letter-spacing:.02em;
   }
+  .logo img{
+    height:150px;width:150px;border-radius:16px;display:block;
+  }
+  @media(max-width:860px){ .logo img{height:96px;width:96px;} }
   .logo span{color:var(--terrace);}
   .nav-links{display:flex;align-items:center;gap:28px;}
   .nav-links a{color:#f0ebe0;font-size:.88rem;font-weight:500;}
@@ -116,7 +121,7 @@
 
   @media(max-width:860px){
     .nav-links{
-      position:fixed;top:64px;left:0;right:0;background:var(--soil-dark);
+      position:fixed;top:118px;left:0;right:0;background:var(--soil-dark);
       flex-direction:column;padding:20px 24px;gap:18px;
       transform:translateY(-150%);transition:transform .3s ease;
     }
@@ -137,14 +142,19 @@
     content:"";position:absolute;inset:0;
     background:linear-gradient(180deg, rgba(20,17,10,.15) 0%, rgba(20,17,10,.35) 55%, rgba(20,17,10,.6) 100%);
   }
-  .hero-content{position:relative;z-index:2;max-width:680px;padding:0 24px;margin:0 auto;width:100%;}
+  .hero-content{position:relative;z-index:2;max-width:680px;padding:0 24px;margin:0 auto;width:100%;text-align:center;}
   .hero h1{
-    color:#fff;font-size:clamp(2.4rem,6vw,4rem);margin-bottom:16px;
+    color:#fff;font-size:clamp(2.4rem,6vw,4rem);margin-bottom:14px;
+  }
+  .hero .slogan{
+    font-family:'Fraunces',serif;font-style:italic;font-weight:500;
+    color:var(--terrace);font-size:clamp(1.05rem,2.4vw,1.35rem);
+    margin-bottom:18px;letter-spacing:.01em;
   }
   .hero p.tagline{
-    font-size:1.15rem;color:#f0ebe0;max-width:520px;margin-bottom:34px;font-weight:300;
+    font-size:1.15rem;color:#f0ebe0;max-width:520px;margin:0 auto 34px;font-weight:300;
   }
-  .hero-btns{display:flex;gap:16px;flex-wrap:wrap;}
+  .hero-btns{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;}
   .scroll-cue{
     position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
     z-index:2;color:#fff;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;
@@ -324,7 +334,7 @@
 
 <header>
   <div class="nav">
-    <div class="logo">Vietnam <span>Intoxicated</span> Travel</div>
+    <a href="#" class="logo"><img src="data:image/webp;base64,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" alt="Vietnam Intoxicated Travel"></a>
     <nav class="nav-links" id="navLinks">
       <a href="#about" data-lang="vi">Người sáng lập</a><a href="#about" data-lang="en">Founder</a>
       <a href="#destinations" data-lang="vi">Điểm đến</a><a href="#destinations" data-lang="en">Destinations</a>
@@ -350,6 +360,7 @@
     <p class="eyebrow" style="color:var(--terrace)" data-lang="vi">Du lịch xanh · Trekking núi rừng Việt Nam</p>
     <p class="eyebrow" style="color:var(--terrace)" data-lang="en">Green Travel · Wild Trekking, Vietnam</p>
     <h1>Vietnam Intoxicated Travel</h1>
+    <p class="slogan">You Trek Your Own Ways</p>
     <p class="tagline" data-lang="vi">Trekking thật, núi rừng thật, Việt Nam thật — cùng người hướng dẫn đã đi qua từng con đường suốt mười lăm năm.</p>
     <p class="tagline" data-lang="en">Real trekking. Real mountains. Real Vietnam — with a guide who has walked every trail for fifteen years.</p>
     <div class="hero-btns">
